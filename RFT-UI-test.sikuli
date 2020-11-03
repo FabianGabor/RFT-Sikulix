@@ -1,0 +1,33 @@
+browser = App("Firefox")
+switchApp("Mozilla Firefox")
+
+if not browser.window(): # Firefox not open
+        browser.open("/usr/lib/firefox/firefox")
+        wait(5)
+browser.focus()
+wait(1)
+type("t", KEY_CTRL) # new tab
+wait(1)
+
+type("maps.google.hu")
+type(Key.ENTER)
+wait(8)
+
+type("Debrecen")
+type(Key.ENTER)
+wait(5)
+
+# Pixel(58,448)
+hover(Location(58, 448))
+wait(2)
+click(Mouse.at()) # utvonalterv gomb
+
+hover(Location(80, 155))
+wait(2)
+click(Mouse.at())
+
+type("Nyiregyhaza")
+type(Key.ENTER)
+wait(5)
+
+browser.close()
